@@ -21,7 +21,6 @@ def lesson_list(request):
 
 
 def test(request, pk):
-    # Testlar faqat Lecture bilan bog‘langan, shuning uchun faqat Lecture dan qidiramiz
     lecture = get_object_or_404(Lecture, pk=pk)
     tests = Test.objects.filter(lesson=lecture).prefetch_related("options")
 

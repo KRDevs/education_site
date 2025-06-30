@@ -88,6 +88,19 @@
                class="bg-purple-500 text-white px-4 py-2 rounded-lg shadow-md text-center hover:bg-purple-600 transition">🎥
                 Video</a>
             {% endif %}
+            <h2 class="text-xl font-semibold text-red-600 mt-8 mb-4 w-full">🎥 Videolar</h2>
+            <div class="grid grid-cols-2 gap-4 w-full mb-8">
+                {% for video in videos %}
+                {% if video.video %}
+                <a href="{{ video.video.url }}" download
+                   class="bg-purple-600 text-white px-4 py-2 rounded-lg shadow-md text-center hover:bg-purple-700 transition">
+                    {{ video.id }} - video
+                </a>
+                {% endif %}
+                {% empty %}
+                <p class="text-gray-500 col-span-2">Hech qanday video mavjud emas.</p>
+                {% endfor %}
+            </div>
         </div>
     </div>
     {% empty %}

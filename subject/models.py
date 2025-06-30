@@ -80,3 +80,6 @@ class TestOption(models.Model):
     class Meta:
         verbose_name = 'Variant'
         verbose_name_plural = 'Variantlar'
+
+class Videos(models.Model):
+    video = models.FileField(upload_to="uploads/videolar/", blank=True, verbose_name="Video")
